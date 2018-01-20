@@ -24,7 +24,6 @@ namespace Triangle
             
             try
             {
-                //a = Convert.ToDecimal(ReplaceDots(textBoxA.Text));
                 a = Convert.ToDecimal((textBoxA.Text).Replace('.',','));
                 c = Convert.ToDecimal((textBoxC.Text).Replace('.',','));
                 b = Convert.ToDecimal((textBoxB.Text).Replace('.',','));
@@ -87,57 +86,5 @@ namespace Triangle
             
             textBoxRes.Text = result;
         }
-
-        /*private string ReplaceDots(string text)
-        {
-            string textWithoutDots = "";
-            text.Replace('.',)
-            for(int i = 0; i < text.Length; i++)
-            {
-                if (text[i] == '.')
-                {
-                    textWithoutDots = textWithoutDots + ",";
-                }
-                else
-                {
-                    textWithoutDots = textWithoutDots + text[i];
-                }
-            }
-            return textWithoutDots;
-        }*/
     }
 }
-
-
-/*if ((a == b) || (b == c) || (a == c))
-               {
-                   if ((a == b) && (b == c))
-                   {
-                       result = "Треугольник равносторонний";
-                   }
-                   else
-                   {
-                       result = "Треугольник равнобедренный";
-                   }
-               }
-               else
-               {
-                   result = "Треугольник простой";
-               }*/
-
-/*private decimal FindMaxSide(decimal a, decimal b, decimal c)
-{
-    if ((a > b) && (a > c))
-    {
-        return a;
-    }
-    else if ((b > c) && (b > a))
-    {
-        return b;
-    }
-    else if ((c > b) && (c > a))
-    {
-        return c;
-    }
-    else return 0;
-}*/
