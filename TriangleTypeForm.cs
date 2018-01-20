@@ -36,7 +36,7 @@ namespace Triangle
                     Triangle newTriangle = new Triangle(a, b, c);
                     if (newTriangle.Exists())
                     {
-                        result = newTriangle.GetTriangleType();
+                        result = newTriangle.Type;
                     }
                     else
                     {
