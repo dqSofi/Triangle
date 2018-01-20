@@ -23,19 +23,9 @@ namespace Triangle
                 else
                 {
                     decimal sqrMax, sqrSum;
-                    FindMaxSqr(A, B, C, out sqrMax, out sqrSum);
-                    if (sqrMax > sqrSum)
-                    {
-                        return "Тупоугольный";
-                    }
-                    else if (sqrMax == sqrSum)
-                    {
-                        return "Прямоугольный";
-                    }
-                    else 
-                    {
-                        return "Остроугольный";
-                    }
+                    decimal[] allSides = new decimal[3] {A, B, C};
+                    FindMaxSqr(allSides, out sqrMax, out sqrSum);
+                    return CalculateType(sqrMax, sqrSum);
                 }
             }
             private set
@@ -56,13 +46,28 @@ namespace Triangle
             return ((A + B > C) && (C + B > A) && (A + C > B));
         }
 
-        public void FindMaxSqr(decimal a, decimal b, decimal c, out decimal kvmax, out decimal kvsum)
+        public void FindMaxSqr(decimal[] allSides,out decimal kvmax, out decimal kvsum)
         {
-            decimal[] allSides = new decimal[3] {a,b,c};
-            decimal sum = a * a + b * b + c * c;
+            decimal sum = allSides[1] * allSides[1] + allSides[2] * allSides[2] + allSides[3] * allSides[3];
             decimal max = allSides.Max()*allSides.Max();
             kvmax = max;
             kvsum = sum-max;
+        }
+
+        private static string CalculateType(decimal sqrMax, decimal sqrSum)
+        {
+            if (sqrMax > sqrSum)
+            {
+                return "Тупоугольный";
+            }
+            else if (sqrMax == sqrSum)
+            {
+                return "Прямоугольный";
+            }
+            else
+            {
+                return "Остроугольный";
+            }
         }
     }
 }
