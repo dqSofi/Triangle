@@ -24,9 +24,10 @@ namespace Triangle
             
             try
             {
-                a = Convert.ToDecimal(ReplaceDots(textBoxA.Text));
-                c = Convert.ToDecimal(ReplaceDots(textBoxC.Text));
-                b = Convert.ToDecimal(ReplaceDots(textBoxB.Text));
+                //a = Convert.ToDecimal(ReplaceDots(textBoxA.Text));
+                a = Convert.ToDecimal((textBoxA.Text).Replace('.',','));
+                c = Convert.ToDecimal((textBoxC.Text).Replace('.',','));
+                b = Convert.ToDecimal((textBoxB.Text).Replace('.',','));
                 if ((a <= 0) || (b <= 0) || (c <= 0))
                 {
                     result = "Значения длин должны быть больше нуля";
@@ -87,9 +88,10 @@ namespace Triangle
             textBoxRes.Text = result;
         }
 
-        private string ReplaceDots(string text)
+        /*private string ReplaceDots(string text)
         {
             string textWithoutDots = "";
+            text.Replace('.',)
             for(int i = 0; i < text.Length; i++)
             {
                 if (text[i] == '.')
@@ -102,7 +104,7 @@ namespace Triangle
                 }
             }
             return textWithoutDots;
-        }
+        }*/
     }
 }
 
