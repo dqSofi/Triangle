@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Triangle
 {
-    public partial class Triangle : Form
+    public partial class TriangleTypeForm : Form
     {
-        public Triangle()
+        public TriangleTypeForm()
         {
             InitializeComponent();
         }
 
         private void resultClick(object sender, EventArgs e)
         {
-            decimal a, b, c, max,mid,min,sqrMax,sqrSum;
+            decimal a, b, c;
             string result="";
             
             try
@@ -33,41 +33,10 @@ namespace Triangle
                 }
                 else
                 {
-                    if ((a + b > c) && (b + c > a) && (a + c > b))
+                    Triangle newTriangle = new Triangle(a, b, c);
+                    if (newTriangle.Exists())
                     {
-                        if (a > b)
-                        {
-                            mid = a;
-                            min = b;
-                        }
-                        else
-                        {
-                            min = a;
-                            mid = b;
-                        }
-                        if (c > mid)
-                        {
-                            max = c;
-                        }
-                        else
-                        {
-                            max = mid;
-                            mid = c;
-                        }
-                        sqrMax = max * max;
-                        sqrSum = mid * mid + min * min;
-                        if (sqrMax > sqrSum)
-                        {
-                            result = "Тупоугольный";
-                        }
-                        else if (sqrMax == sqrSum)
-                        {
-                            result = "Прямоугольный";
-                        }
-                        else if (sqrMax < sqrSum)
-                        {
-                            result = "Остроугольный";
-                        }
+                        result = newTriangle.GetTriangleType();
                     }
                     else
                     {
@@ -83,7 +52,6 @@ namespace Triangle
             {
                 result = "Возникла ошибка";
             }
-            
             textBoxRes.Text = result;
         }
     }

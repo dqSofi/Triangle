@@ -1,6 +1,6 @@
 ﻿namespace Triangle
 {
-    partial class Triangle
+    partial class TriangleTypeForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.

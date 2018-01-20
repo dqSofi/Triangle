@@ -16,7 +16,7 @@ namespace Triangle
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Triangle());
+            Application.Run(new TriangleTypeForm());
         }
     }
 }
