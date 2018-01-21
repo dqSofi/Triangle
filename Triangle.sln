@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle", "Triangle.csproj", "{A18703CB-CF1D-439C-9BA0-53BBF5CB4DEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoTestTriangle", "D:\C_Sharp\AutoTestTriangle\AutoTestTriangle\AutoTestTriangle.csproj", "{206808D8-1997-4D00-8F9E-B37974B260FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A18703CB-CF1D-439C-9BA0-53BBF5CB4DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A18703CB-CF1D-439C-9BA0-53BBF5CB4DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A18703CB-CF1D-439C-9BA0-53BBF5CB4DEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{206808D8-1997-4D00-8F9E-B37974B260FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{206808D8-1997-4D00-8F9E-B37974B260FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{206808D8-1997-4D00-8F9E-B37974B260FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{206808D8-1997-4D00-8F9E-B37974B260FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

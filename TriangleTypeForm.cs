@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Triangle
+namespace TriangleType
 {
     public partial class TriangleTypeForm : Form
     {
@@ -17,7 +17,7 @@ namespace Triangle
             InitializeComponent();
         }
 
-        private void resultClick(object sender, EventArgs e)
+        public void resultClick(object sender, EventArgs e)
         {
             string result="";
             try
@@ -47,12 +47,11 @@ namespace Triangle
             textBoxRes.Text = result;
         }
 
-        private Triangle ReadAllSides()
+        public Triangle ReadAllSides()
         {
-            decimal a, b, c;
-            a = Convert.ToDecimal((textBoxA.Text).Replace('.', ','));
-            b = Convert.ToDecimal((textBoxB.Text).Replace('.', ','));
-            c = Convert.ToDecimal((textBoxC.Text).Replace('.', ','));
+            decimal a = Convert.ToDecimal((textBoxA.Text).Replace('.', ','));
+            decimal b = Convert.ToDecimal((textBoxB.Text).Replace('.', ','));
+            decimal c = Convert.ToDecimal((textBoxC.Text).Replace('.', ','));
             if ((a <= 0) || (b <= 0) || (c <= 0))
             {
                 throw new ZeroSideException();

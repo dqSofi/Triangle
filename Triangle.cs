@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Triangle
+namespace TriangleType
 {
     public class Triangle
     {
@@ -22,9 +22,8 @@ namespace Triangle
                 }
                 else
                 {
-                    decimal sqrMax, sqrSum;
                     decimal[] allSides = new decimal[3] {A, B, C};
-                    FindSqrs(allSides, out sqrMax, out sqrSum);
+                    FindSqrs(allSides, out decimal sqrMax, out decimal sqrSum);
                     return CalculateType(sqrMax, sqrSum);
                 }
             }
@@ -34,25 +33,33 @@ namespace Triangle
             }
         }
 
-        internal Triangle(decimal a, decimal b, decimal c)
+        public Triangle(decimal a, decimal b, decimal c)
         {
             A = a;
             B = b;
             C = c;
         }
 
-        internal bool Exists()
+        public Triangle()
+        {
+            A = 0;
+            B = 0;
+            C = 0;
+            Type = "";
+        }
+
+        public bool Exists()
         {
             return ((A + B > C) && (C + B > A) && (A + C > B));
         }
 
-        private void FindSqrs(decimal[] allSides,out decimal sqrOfMaxSide, out decimal sumOfSidesSqrs)
+        public void FindSqrs(decimal[] allSides,out decimal sqrOfMaxSide, out decimal sumOfSidesSqrs)
         {
             sqrOfMaxSide = allSides.Max() * allSides.Max();
             sumOfSidesSqrs = allSides[0] * allSides[0] + allSides[1] * allSides[1] + allSides[2] * allSides[2] - sqrOfMaxSide;
         }
 
-        private static string CalculateType(decimal sqrMax, decimal sqrSum)
+        public string CalculateType(decimal sqrMax, decimal sqrSum)
         {
             if (sqrMax > sqrSum)
             {

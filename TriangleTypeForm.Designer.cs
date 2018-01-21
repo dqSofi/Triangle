@@ -1,4 +1,4 @@
-﻿namespace Triangle
+﻿namespace TriangleType
 {
     partial class TriangleTypeForm
     {
