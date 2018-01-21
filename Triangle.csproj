@@ -54,6 +54,7 @@
     <Compile Include="Triangle.cs" />
     <Compile Include="TriangleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZeroSideException.cs" />
     <EmbeddedResource Include="TriangleTypeForm.resx">
       <DependentUpon>TriangleTypeForm.cs</DependentUpon>
     </EmbeddedResource>
