@@ -51,8 +51,8 @@ namespace Triangle
         {
             decimal a, b, c;
             a = Convert.ToDecimal((textBoxA.Text).Replace('.', ','));
-            c = Convert.ToDecimal((textBoxC.Text).Replace('.', ','));
             b = Convert.ToDecimal((textBoxB.Text).Replace('.', ','));
+            c = Convert.ToDecimal((textBoxC.Text).Replace('.', ','));
             if ((a <= 0) || (b <= 0) || (c <= 0))
             {
                 throw new ZeroSideException();

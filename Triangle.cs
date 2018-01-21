@@ -8,9 +8,9 @@ namespace Triangle
 {
     public class Triangle
     {
-        decimal A { get; set; }
-        decimal B { get; set; }
-        decimal C { get; set; }
+        private decimal A { get; set; }
+        private decimal B { get; set; }
+        private decimal C { get; set; }
         string type;
 
         public string Type {
@@ -24,7 +24,7 @@ namespace Triangle
                 {
                     decimal sqrMax, sqrSum;
                     decimal[] allSides = new decimal[3] {A, B, C};
-                    FindMaxSqr(allSides, out sqrMax, out sqrSum);
+                    FindSqrs(allSides, out sqrMax, out sqrSum);
                     return CalculateType(sqrMax, sqrSum);
                 }
             }
@@ -34,7 +34,7 @@ namespace Triangle
             }
         }
 
-        public Triangle(decimal a, decimal b, decimal c)
+        internal Triangle(decimal a, decimal b, decimal c)
         {
             A = a;
             B = b;
@@ -46,12 +46,10 @@ namespace Triangle
             return ((A + B > C) && (C + B > A) && (A + C > B));
         }
 
-        public void FindMaxSqr(decimal[] allSides,out decimal kvmax, out decimal kvsum)
+        private void FindSqrs(decimal[] allSides,out decimal sqrOfMaxSide, out decimal sumOfSidesSqrs)
         {
-            decimal sum = allSides[1] * allSides[1] + allSides[2] * allSides[2] + allSides[3] * allSides[3];
-            decimal max = allSides.Max()*allSides.Max();
-            kvmax = max;
-            kvsum = sum-max;
+            sqrOfMaxSide = allSides.Max() * allSides.Max();
+            sumOfSidesSqrs = allSides[0] * allSides[0] + allSides[1] * allSides[1] + allSides[2] * allSides[2] - sqrOfMaxSide;
         }
 
         private static string CalculateType(decimal sqrMax, decimal sqrSum)
